@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Looting Generator</title>
+</head>
+
+
+
+<body oncontextmenu="return false;">
+    
+    <div id="main_screen">
+
+        <div id="player"></div>
+        
+
+        <div id="chest_list">
+            <div class="rigid chest" generate-loot="true" chest-locked="false" chest-id="1" style="left: 120px; top: 100px;">
+                <div class="chest_area"></div>
+                <div class="promptkey" prompt="e"></div>
+                <div class="chest_items"></div>
+            </div>
+
+            <div class="rigid chest" generate-loot="true" chest-locked="true" chest-id="2" style="left: 320px; top: 100px;">
+                <div class="chest_area"></div>
+                <div class="promptkey" prompt="e"></div>
+                <div class="chest_items"></div>
+            </div>
+
+            <div class="rigid chest" generate-loot="true" chest-locked="false" chest-id="3" style="left: 520px; top: 100px;">
+                <div class="chest_area"></div>
+                <div class="promptkey" prompt="e"></div>
+                <div class="chest_items"></div>
+            </div>
+        </div>
+
+
+
+
+        <div id="collectable_list">
+            <div class="item collectable" item-name="candy_02a" qty="16" style="left: 100px; top: 32px; background-image: url('top_assets/items/candy_02a.png');"></div> 
+            <div class="item collectable" item-name="coin_01d" qty="8" style="left: 50px; top: 250px; background-image: url('top_assets/items/coin_01d.png');"></div> 
+            <div class="item collectable" item-name="fruit_01a" qty="2" style="left: 100px; top: 200px; background-image: url('top_assets/items/fruit_01a.png');"></div> 
+            <div class="item collectable" item-name="sword_02b" qty="1" style="left: 200px; top: 32px; background-image: url('top_assets/items/sword_02b.png');"></div>
+            <div class="item collectable" item-name="key_01c" qty="1" key-id="2" style="left: 320px; top: 32px; background-image: url('top_assets/items/key_01c.png');"></div>
+
+        </div>
+
+
+
+
+
+        <div id="moveable_list">
+            <div class="moveable"></div>
+            <div class="moveable" style="top: 200px;"></div>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- INTERFACE -->
+        <div id="game_interface">
+
+            <div id="tempSlot" class="slot"></div>
+            <div id="tooltip"></div>
+
+            <div id="interface">
+
+                <div class="slot_wrappper" id="chest_interface">
+
+                    <div class="slot_title">BAÚ</div>
+
+                    <div class="slot_list">
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="slot_wrappper" id="inventory_interface">
+
+                    <div class="slot_title">INVENTÁRIO</div>
+
+                    <div class="slot_list">
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"></div>
+                        <div class="slot"> <div class="item" item-name="candy_02a" style="background-image: url('top_assets/items/candy_02a.png');">5</div> </div>
+                        <div class="slot"> <div class="item" item-name="candy_02a" style="background-image: url('top_assets/items/candy_02a.png');">60</div> </div>
+                        <div class="slot"> <div class="item" item-name="coin_01d" style="background-image: url('top_assets/items/coin_01d.png');">60</div> </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+    
+
+    <script src="scripts/animations.js"></script>
+    <script src="scripts/items.js"></script>
+    <script src="scripts/loot-table.js"></script>
+    <script src="scripts/keyboard-controller.js"></script>
+    <script src="scripts/script.js"></script>
+
+
+</body>
+</html>

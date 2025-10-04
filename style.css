@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #181818;
+    color: #fff;
+    user-select: none;
+}
+
+
+
+
+#main_screen{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+
+
+
+
+
+
+
+/* GAME */
+
+#player{
+    width: calc(21px * 2);
+    height: calc(26px * 2);
+    image-rendering: pixelated;
+    background-image: url("top_assets/player.png");
+    background-size: 126px 208px;
+    background-position: calc(-42px * 1) calc(-52px * 0); 
+    position: absolute;
+    left: 0;
+    top: 0; 
+}
+
+
+
+
+.chest{
+    width: 48px;
+    height: 48px;
+    image-rendering: pixelated;
+    background-size: 300% 100%;
+    background-position-x: calc(-100% * 0);
+    background-image: url("top_assets/chest.png");
+    position: absolute;
+    left: 100px;
+    top: 125px;
+}
+
+.chest_area{
+    width: 100px;
+    aspect-ratio: 1/1;
+    margin: auto;
+    position: absolute;
+    left: -26px;
+    top: 0;
+    bottom: 0;
+}
+
+
+
+.promptkey{
+    width: 16px;
+    height: 16px;
+    margin: auto; 
+    background-image: url("top_assets/Keyboard\ Letters\ and\ Symbols.png");
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.collectable{
+    position: absolute;
+    animation: 1s pulse infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1.2); }
+    50% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+
+
+
+
+
+
+
+
+
+
+.moveable{
+    width: 32px;
+    height: 46px;
+    background-color: rebeccapurple;
+    image-rendering: pixelated;
+    background-image: url("top_assets/props.png");
+    background-position: -160px -18px;
+    position: absolute;
+    left: 70px;
+    top: 120px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* INTERFACE */
+
+#game_interface{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    z-index: 99;
+
+    display: none;
+}
+
+.interface_open{
+    display: flex !important;
+}
+
+.slot_wrappper{
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+.slot_title{
+    padding: 8px 10px;
+    color: #ecad44;
+    font-weight: 500;
+}
+
+.slot_list{ 
+    width: 336px;
+    height: 179px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 6.5px 7px;
+    padding: 16px 16px;
+    image-rendering: pixelated;
+    background-image: url("top_assets/slots.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.slot{
+    width: 32px;
+    height: 32px;
+    box-shadow: inset 0 0 5px 0 #000;
+}
+.slot:hover{ 
+    background-color: #24120680;
+    border-color: #fafafa;
+}
+
+.item{
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated; 
+    font-size: 0.8em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end; 
+}
+
+#tempSlot{
+    box-shadow: none;
+    border: none;
+    transition: none;
+    background-color: transparent;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+#tooltip{
+    visibility: hidden;
+    width: fit-content;
+    padding: 4px 8px;
+    border: 1px solid #ecad44;
+    background-color: #934447;
+    color: #ecad44;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
